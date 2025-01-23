@@ -1,10 +1,10 @@
 // Dette er Dalai Solutions AS sin eiendom, på leie til Holmenkollen Skifestival AS. Bruk utover avtale er ikke tillat.    
 let widgetDescription = " ";
-let browserUrl = window.location.href;
+let browser_url = window.location.href;
 
- if (browserUrl.includes('/en')) {
+ if (browser_url.includes('/en')) {
 widgetDescription = "I'm pretty smart, so just ask!⛷️Don't share any sensitive personal information with me.";
-} else if (browserUrl.includes('de')) {
+} else if (browser_url.includes('de')) {
 widgetDescription = "Ich bin ziemlich schlau, frag mich einfach!⛷️Gib mir keine sensiblen persönlichen Informationen.";
 } else {
 widgetDescription = "Jeg er ganske smart, bare spør!⛷️Ikke gi meg sensitiv personinformasjon.";
