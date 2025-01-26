@@ -1,13 +1,17 @@
 // Dette er Dalai Solutions AS sin eiendom, på leie til Holmenkollen Skifestival AS. Bruk utover avtale er ikke tillat.    
 let widgetDescription = " ";
+let inputPlaceholder = " ";
 let browser_url = window.location.href;
 
  if (browser_url.includes('/en')) {
 widgetDescription = "I'm pretty smart, so just ask!⛷️Don't share any sensitive personal information with me.";
+inputPlaceholder = "Message...";
 } else if (browser_url.includes('de')) {
 widgetDescription = "Ich bin ziemlich schlau, frag mich einfach!⛷️Gib mir keine sensiblen persönlichen Informationen.";
+inputPlaceholder = "Nachricht schreiben...";
 } else {
 widgetDescription = "Jeg er ganske smart, bare spør!⛷️Ikke gi meg sensitiv personinformasjon.";
+inputPlaceholder = "Skriv melding..."
 }
 
 // Definer FormExtension
@@ -159,8 +163,9 @@ let script = document.createElement("script");
           url: 'https://general-runtime.voiceflow.com',
           versionID: 'production',
           assistant:  {
-            description: widgetDescription,
-            extensions: [FormExtension]
+            extensions: [FormExtension],
+            banner: { description: widgetDescription },
+            inputPlaceholder: inputPlaceholder
           },
           launch: {
             event: { type: "launch", payload: { browser_url: window.location.href } }
