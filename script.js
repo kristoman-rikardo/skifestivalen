@@ -4,13 +4,13 @@ let inputPlaceholder = " ";
 let browser_url = window.location.href;
 
  if (browser_url.includes('/en')) {
-widgetDescription = "I'm pretty smart, so just ask!⛷️Don't share any sensitive personal information with me.";
+widgetDescription = "I'm quite smart, but I need a couple of seconds to think it through⛷️ Please don't share sensitive personal information with me.";
 inputPlaceholder = "Message...";
 } else if (browser_url.includes('de')) {
-widgetDescription = "Ich bin ziemlich schlau, frag mich einfach!⛷️Gib mir keine sensiblen persönlichen Informationen.";
+widgetDescription = "Ich bin ziemlich klug, aber ich brauche ein paar Sekunden, um nachzudenken⛷️ Bitte gib mir keine sensiblen persönlichen Informationen.";
 inputPlaceholder = "Nachricht schreiben...";
 } else {
-widgetDescription = "Jeg er ganske smart, bare spør!⛷️Ikke gi meg sensitiv personinformasjon.";
+widgetDescription = "Jeg er ganske smart, men trenger et par sekunder for å tenke meg om⛷️ Ikke gi meg sensitiv personinformasjon.";
 inputPlaceholder = "Skriv melding..."
 }
 
