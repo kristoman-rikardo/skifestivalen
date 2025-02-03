@@ -145,6 +145,15 @@ const FormExtension = {
           `;
         }, 1500); 
       });
+
+       window.voiceflow.chat.interact({
+        type: 'complete',
+        payload: {
+          email: emailInput.value,
+          topic: topicInput.value,
+          userQuestion: userQuestionInput.value,
+        },
+      });
   
       if (element) {
         element.appendChild(formContainer);
