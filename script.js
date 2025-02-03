@@ -35,7 +35,7 @@ const FormExtension = {
     }
 
     label {
-      font-size: 0.7em;
+      font-size: 0.7em; /* Justert til lik størrelse som chatten */
       color: #333;
       display: block;
       margin: 6px 0 3px;
@@ -44,13 +44,13 @@ const FormExtension = {
 
     input[type="text"], input[type="email"], textarea {
       width: 100%;
-      border: 1px solid #C6007D;
+      border: 1px solid pink;
       background-color: #fff;
       color: #333;
       margin: 6px 0;
       padding: 6px;
       outline: none;
-      font-size: 0.7em;
+      font-size: 0.7em; /* Justert til lik størrelse som chatten */
       font-family: Arial, sans-serif;
       border-radius: 6px;
       box-sizing: border-box;
@@ -65,7 +65,7 @@ const FormExtension = {
     }
 
     .submit {
-      background-color: #C6007D;
+      background-color: pink;
       border: none;
       color: white;
       padding: 8px;
@@ -73,7 +73,7 @@ const FormExtension = {
       margin-top: 12px;
       width: 100%;
       cursor: pointer;
-      font-size: 0.7em;
+      font-size: 0.7em; /* Justert til lik størrelse som chatten */
       font-weight: 500;
     }
       </style>
@@ -92,6 +92,7 @@ const FormExtension = {
       <input type="submit" class="submit" value="Send">
     `;
 
+    // Prefill the form fields with the variables from trace.payload
     const emailInput = formContainer.querySelector('.email');
     const topicInput = formContainer.querySelector('.topic');
     const userQuestionInput = formContainer.querySelector('.userQuestion');
@@ -101,6 +102,7 @@ const FormExtension = {
     userQuestionInput.value = trace.payload.userQuestion || '';
 
     formContainer.addEventListener('input', function () {
+      // Remove 'invalid' class when input becomes valid
       if (emailInput.checkValidity()) emailInput.classList.remove('invalid');
       if (topicInput.checkValidity()) topicInput.classList.remove('invalid');
       if (userQuestionInput.checkValidity()) userQuestionInput.classList.remove('invalid');
@@ -109,7 +111,11 @@ const FormExtension = {
     formContainer.addEventListener('submit', function (event) {
       event.preventDefault();
 
-      if (!emailInput.checkValidity() || !topicInput.checkValidity() || !userQuestionInput.checkValidity()) {
+      if (
+        !emailInput.checkValidity() ||
+        !topicInput.checkValidity() ||
+        !userQuestionInput.checkValidity()
+      ) {
         if (!emailInput.checkValidity()) emailInput.classList.add('invalid');
         if (!topicInput.checkValidity()) topicInput.classList.add('invalid');
         if (!userQuestionInput.checkValidity()) userQuestionInput.classList.add('invalid');
@@ -126,16 +132,12 @@ const FormExtension = {
           userQuestion: userQuestionInput.value,
         },
       });
-
-      // Etter 5 sekunder byttes skjemaet ut med "Skjemaet er lukket."
-      setTimeout(() => {
-        formContainer.innerHTML = '<p>Skjemaet er lukket.</p>';
-      }, 5000);
     });
 
     element.appendChild(formContainer);
   },
 };
+
 
 // Last inn Chat-widget
 let script = document.createElement("script");
