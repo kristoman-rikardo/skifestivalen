@@ -6,12 +6,15 @@ let browser_url = window.location.href;
  if (browser_url.includes('/en')) {
 widgetDescription = "I'm quite smart, but I need a couple of seconds to think it through⛷️ I'm still in training and may make some minor mistakes.";
 inputPlaceholder = "Message...";
+widgetStyleSheet = "https://kristoman-rikardo.github.io/buttonlabels/en.css";
 } else if (browser_url.includes('de')) {
 widgetDescription = "Ich bin ziemlich klug, aber ich brauche ein paar Sekunden, um nachzudenken⛷️Ich bin noch in der Ausbildung und könnte einige kleine Fehler machen.";
 inputPlaceholder = "Nachricht schreiben...";
+widgetStyleSheet = "https://kristoman-rikardo.github.io/buttonlabels/de.css";
 } else {
 widgetDescription = "Jeg er ganske smart, men trenger et par sekunder for å tenke meg om⛷️Jeg er fortsatt under opplæring, og kan derfor gjøre små feil.";
-inputPlaceholder = "Skriv melding..."
+inputPlaceholder = "Skriv melding...";
+widgetStyleSheet = "https://kristoman-rikardo.github.io/buttonlabels/no.css";
 }
 
 const FormExtension = {
