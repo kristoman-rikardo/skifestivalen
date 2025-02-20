@@ -21,7 +21,7 @@ const FormExtension = {
   name: 'Forms',
   type: 'response',
   match: ({ trace }) =>
-    trace.type === 'Custom_Form' || trace.payload.name === 'Custom_Form',
+    trace.type === 'Custom_Form' || trace.payload?.name === 'Custom_Form',
   render: ({ trace, element }) => {
     const formContainer = document.createElement('form');
 
