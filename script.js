@@ -1,6 +1,7 @@
 // Dette er Dalai Solutions AS sin eiendom, på leie til Holmenkollen Skifestival AS. Bruk utover avtale er ikke tillat.    
 let widgetDescription = " ";
 let inputPlaceholder = " ";
+let widgetStyleSheet = " ";
 let browser_url = window.location.href;
 
  if (browser_url.includes('/en')) {
@@ -151,7 +152,8 @@ let script = document.createElement("script");
           assistant:  {
             extensions: [FormExtension],
             banner: { description: widgetDescription },
-            inputPlaceholder: inputPlaceholder
+            inputPlaceholder: inputPlaceholder,
+            stylesheet: widgetStyleSheet
           },
           launch: {
             event: { type: "launch", payload: { browser_url: window.location.href } }
